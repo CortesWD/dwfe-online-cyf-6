@@ -1,0 +1,35 @@
+.app {
+  display: block;
+  margin: 16px auto;
+  max-width: 400px;
+}
+
+.app label {
+  text-align: left;
+}
+
+input {
+  border: 1px solid #2C3259;
+  padding: 4px 2px;
+  margin: 4px auto;
+  border-radius: 4px;
+}
+
+.button {
+  background-color: #454F8C;
+  border: 0px solid transparent;
+  color: white;
+  cursor: pointer;
+  padding: 4px 16px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  background-color: #6A79D9;
+}
+
+.button:disabled {
+  background-color: #474959;
+  pointer-events: none;
+}
