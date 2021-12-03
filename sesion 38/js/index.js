@@ -1,5 +1,9 @@
 const URL_BASE = 'https://jsonplaceholder.typicode.com';
 
+// Guardamos fetch en una funcion para tener una URL BASE
+// asi evitamos escribir siempre toda la dirección web
+// el parametro "path" nos va permitir escribir N peticiones
+// sin necesidad de escribir lo mismo una y otra vez
 const request = (path) => fetch(`${URL_BASE}${path}`);
 
 request('/posts?userId=1')

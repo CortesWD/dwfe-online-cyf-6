@@ -58,6 +58,9 @@ const postByUserId = (id) => {
     if (id < 10 || id < 1) {
       reject("ID inválido");
     } else {
+      // resolve() puede recibir otras promesas (como fetch)
+      // esto nos permite dejar en un solo nivel de encadenamiento (then, catch)
+      // la resolucion de las mismas
       resolve(peticiones(`/posts?userId=${id}`))
     }
   });
