@@ -8,6 +8,7 @@ import React from 'react';
  */
 import Gallery from './components/gallery/Gallery';
 import Card from './components/gallery/components/Card';
+import CustomGallery from './components/gallery/CustomGallery/CustomGallery';
 
 /**
  * Styles
@@ -26,6 +27,19 @@ function App() {
       <Gallery
         images={imagesGallery}
         />
+      <CustomGallery>
+        <h2>nombres de las obras</h2>
+        {imagesGallery.map((item) => {
+          return (<p>{item.title}</p>)
+        })}
+      </CustomGallery>
+
+      <CustomGallery>
+        <h3>Imagenes </h3>
+        {imagesGallery.map((item) => {
+          return (<img src={item.url} />)
+        })}
+      </CustomGallery> 
     </>
   );
 }
