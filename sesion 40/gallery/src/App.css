@@ -1,0 +1,32 @@
+.app {
+  background: lightgray;
+  text-align: center;
+  display: block;
+  margin: 16px auto;
+}
+
+header {
+  background-color: green;
+}
+
+input {
+  border: 1px solid #2C3259;
+  padding: 4px ;
+}
+
+.app.dark {
+  background-color: #333;
+  color: white;
+}
+
+.dark header {
+  background-color: gray;
+}
+
+.dark .btn {
+  background-color: darkorchid;
+}
+
+.dark .image-card {
+  box-shadow: 5px 5px 5px #222;
+}
