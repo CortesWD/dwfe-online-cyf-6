@@ -1,0 +1,49 @@
+.app {
+  text-align: center;
+  display: block;
+}
+
+.app {
+  background-color: #38d8c6;
+  margin: 0 auto;
+}
+
+.app.light { background-color: #38d8c6; }
+.app.dark {
+  background-color: #101010;
+  color: white;
+}
+
+input {
+  border: 1px solid #2C3259;
+  padding: 4px ;
+}
+
+.button {
+  background-color: #454F8C;
+  border: 0px solid transparent;
+  color: white;
+  cursor: pointer;
+  padding: 4px 16px;
+  text-transform: uppercase;
+}
+
+
+.container {
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.dark .btn {
+  background-color: #6A79D9;
+}
+
+.dark .card {
+  background-color: #b2b2b2;
+}
+
+.dark input {
+  border-color: #b2b2b2;
+  background-color: #555;
+  color: #b2b2b2;
+}
