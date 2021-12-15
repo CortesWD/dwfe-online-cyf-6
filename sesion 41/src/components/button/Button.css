@@ -10,4 +10,5 @@
 
 .btn:disabled {
   background-color: gray;
+  cursor: default;
 }
