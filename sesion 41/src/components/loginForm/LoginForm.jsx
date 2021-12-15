@@ -1,7 +1,7 @@
 /**
  * Dependencies
  */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 /**
  * Components
@@ -21,20 +21,28 @@ function LoginForm() {
   const [username, setUsername] = useState('');
   const [userError, setUserError] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // const usernameNormalized = username.toLowerCase();
-    // if (
-    //   usernameNormalized === 'username'
-    //   || username === 'test'
-    //   || username === ''
-    //   ) {
-    //   setUserError(true);
-    // }
-    if (invalidUsers.includes(username.toLowerCase())) {
-      setUserError(true)
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (invalidUsers.includes(username.toLowerCase())) {
+  //     setUserError(true)
+  //   }
+  // }
+
+  useEffect(() => {
+    console.log('componente montado');
+    return () => {
+      console.log('componente destruido')
     }
-  }
+  }, []);
+
+  useEffect(() => {
+  // username.length > 0
+    if(username.length && (username.length < 3 || username.toLowerCase() === 'username')) {
+      setUserError(true);
+    } else {
+      setUserError(false);
+    }
+  }, [username]);
 
   return (
     <div className="flex-container centered">
@@ -50,10 +58,10 @@ function LoginForm() {
           />
           <Input placeholder="password" name="password" type="password" />
           <Button
-            type="submit"
-            onClick={handleSubmit}
+            type="button"
+            // onClick={handleSubmit}
           >
-            login
+            Crear cuenta
           </Button>
         </form>
       </Card>
