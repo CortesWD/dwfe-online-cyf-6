@@ -1,7 +1,7 @@
 /**
  * Dependencies
  */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 /**
  * Components
@@ -15,30 +15,40 @@ import './App.css';
 
 function App() {
   const [users, setUsers] = useState([]);
+  const [show, setShow] = useState(false);
+  const btnRef = useRef();
   useEffect(() => {
-    const request = fetch('https://jsonplaceholder.typicode.com/users');
+    if (show) {
+      const request = fetch('https://jsonplaceholder.typicode.com/users');
+      request
+        .then((res) => res.json())
+        .then((data) => {
+          setUsers(data);
+        })
+        .catch(err => console.error(err));
+    }
+  }, [show]);
 
-    request
-      .then((res) => res.json())
-      .then((data) => {
-        setUsers(data);
-      })
-      .catch(err => console.error(err));
-
-  }, []);
-  
   return (
     <section className='App'>
       <h1>Personas: </h1>
+      <button ref={btnRef} type="button" onClick={() => setShow(!show)}>
+        {`${!show ? 'mostrar' : 'ocultar'}`}
+      </button>
+      <hr />
       <div className="personas">
-        {(users || []).map((item) => {
-          return (
-            <Persona
-              key={item.id}
-              nombre={item.name}
-            />
-          )
-        })}
+        {users.length > 0 ? (
+          (users || []).map((item) => {
+            return (
+              <Persona
+                key={item.id}
+                nombre={item.name}
+              />
+            )
+          })
+        ) : (
+          show && <p>trayendo datos de usuarios...</p>
+        )}
       </div>
     </section>
   );
