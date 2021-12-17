@@ -1,0 +1,16 @@
+* {
+  font-family: "Roboto", Arial;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.flex-container {
+  display: flex;
+  height: 100vh;
+}
+
+.centered {
+  justify-content: center;
+  align-items: center;
+}
