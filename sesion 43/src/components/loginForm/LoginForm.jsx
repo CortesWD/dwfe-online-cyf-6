@@ -1,7 +1,7 @@
 /**
  * Dependencies
  */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 /**
  * Components
@@ -15,26 +15,16 @@ import Button from "../button/Button";
  */
 import "./LoginForm.css";
 
+/**
+ * Hooks
+ */
+import { useWindowResize } from '../../hooks/useWindowResize';
+
 function LoginForm() {
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [width, setWidth] = useState(undefined)
-
-  useEffect(() => {
-
-    function handleResize() {
-      setWidth(window.innerWidth);
-    }
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    // al destruir el componente
-    // debemos quitar listeners y scripts para evitar
-    // leaks de memoria y que la app crashee
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    }
-  }, []);
+  const width = useWindowResize();
 
   return (
     <div className='flex-container centered'>
