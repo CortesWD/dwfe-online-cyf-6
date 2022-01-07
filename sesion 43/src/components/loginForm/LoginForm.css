@@ -1,0 +1,13 @@
+.form {
+  padding: 50px;
+}
+
+.big {
+  background-color: red;
+  min-width: 400px;
+}
+
+.mobile {
+  background-color: green;
+  max-width: 320px;
+}
