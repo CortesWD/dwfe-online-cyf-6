@@ -16,7 +16,7 @@ import './App.css';
 function App() {
   const [users, setUsers] = useState([]);
   const [show, setShow] = useState(false);
-  const btnRef = useRef();
+
   useEffect(() => {
     if (show) {
       const request = fetch('https://jsonplaceholder.typicode.com/users');
@@ -32,7 +32,7 @@ function App() {
   return (
     <section className='App'>
       <h1>Personas: </h1>
-      <button ref={btnRef} type="button" onClick={() => setShow(!show)}>
+      <button type="button" onClick={() => setShow(!show)}>
         {`${!show ? 'mostrar' : 'ocultar'}`}
       </button>
       <hr />
