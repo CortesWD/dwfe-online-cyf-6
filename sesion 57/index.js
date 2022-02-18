@@ -13,8 +13,10 @@ const add = (num1,num2) => logger(num1 + num2);
 
 
 const getGreater = (a,b) => {
-  const getNum = a > b ? a : b;
+  const getNum = Math.max(a,b);
   logger(`the greater num is ${getNum}`);
 
   return getNum;
 }
+
+getGreater(200000,2000001);
