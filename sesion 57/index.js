@@ -32,3 +32,11 @@ const potenciaDeDos = (n) => {
 }
 
 potenciaDeDos(3);
+
+const getSquare = (n) => {
+  const q = Math.sqrt(n);
+  console.log(`la raiz cuadrada de ${n} es ${q}`);
+  return q;
+}
+
+getSquare(133);
