@@ -33,6 +33,10 @@ const potenciaDeDos = (n) => {
 
 potenciaDeDos(3);
 
+/**
+ * @description raiz cuadrada de numero
+ * @param {String} n 
+ */
 const getSquare = (n) => {
   const q = Math.sqrt(n);
   console.log(`la raiz cuadrada de ${n} es ${q}`);
@@ -40,6 +44,3 @@ const getSquare = (n) => {
 }
 
 getSquare(133);
-
-console.log('hola mundo');
-console.log("esto es una prueba");
