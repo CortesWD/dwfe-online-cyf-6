@@ -40,3 +40,5 @@ const getSquare = (n) => {
 }
 
 getSquare(133);
+
+console.log('hola mundo');
