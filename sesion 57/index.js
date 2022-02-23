@@ -42,3 +42,4 @@ const getSquare = (n) => {
 getSquare(133);
 
 console.log('hola mundo');
+console.log("esto es una prueba");
